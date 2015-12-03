@@ -1,10 +1,10 @@
 angular
   .module('myApp')
-  .factory('myFactory', MyFactory);
+  .factory('myFactory', myFactory);
 
-MyFactory.$inject = ['$http'];
+myFactory.$inject = ['$http'];
 
-function MyFactory($http) {
+function myFactory($http) {
   return {
     getMovie: getMovie
   };
