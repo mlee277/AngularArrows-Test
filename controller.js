@@ -1,12 +1,12 @@
 angular
-  .module('MyApp', ['ngRoute'])
-  .controller('MyController', ['$scope', 'MyFactory', myController]);
+  .module('myApp')
+  .controller('myController', myController);
 
-function myController($scope, MyFactory) {
+function myController($scope, myFactory) {
   $scope.name = "Bryan";
   $scope.movie = "";
+  console.log(myFactory.getMovie());
   $scope.getMovie = function() {
-    console.log('hi');
     $scope.name = $scope.movie;
     $scope.movie = "";
   };

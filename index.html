@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html ng-app="MyApp">
+<html ng-app="myApp">
   <head>
     <meta charset="utf-8">
     <title>Test</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.1/angular-route.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.1/angular-messages.js"></script>
     <script type="text/javascript" src="app.js"></script>
     <script type="text/javascript" src="factory.js"></script>
     <script type="text/javascript" src="controller.js"></script>
@@ -12,16 +13,12 @@
   </head>
   <body>
 
-
-    <div class="" ng-controller="MyController as myCont">
-      <form class="" ng-submit="myCont.getMovie()">
-        <input type="text" name="name" ng-model="myCont.movie">
-
-        <input type="submit" value="submit">
+    <div class="" ng-controller="myController">
+      <form ng-submit="getMovie()">
+        <input type="text" ng-model="movie"  size="30">
+        <input class="btn-primary" type="submit" value="add">
       </form>
-      <div class="">
-        {{name}}
-      </div>
+      {{name}}
     </div>
 
   </body>
