@@ -6,20 +6,19 @@ myFactory.$inject = ['$http'];
 
 function myFactory($http) {
   return {
-    getMovie: getMovie
+    getMovieInfo: getMovieInfo
   };
-}
+  function getMovieInfo() {
 
-function getMovie() {
-  return $http.get('http://www.omdbapi.com/?t=frozen&y=&plot=short&r=json')
-        .then(getMovieComplete)
-        .catch(getMovieFailed);
-  function getMovieComplete(response) {
-    console.log(response);
-    return response;
-  }
-  function getMovieFailed(error) {
-    console.log(error);
-    // logger.error('ERROR:' + error);
+    return $http.get('http://www.omdbapi.com/?t=frozen&y=&plot=short&r=json')
+          .then(getMovieComplete)
+          .catch(getMovieFailed);
+    function getMovieComplete(response) {
+      return response.data;
+    }
+    function getMovieFailed(error) {
+      console.log(error);
+      // logger.error('ERROR:' + error);
+    }
   }
 }
